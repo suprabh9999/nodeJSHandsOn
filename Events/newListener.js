@@ -12,6 +12,8 @@ const myEmitter = new EventEmitter();
     myEmitter.on('newListener',(event, listener)=>console.log(event, listener));
     myEmitter.on('newListener',()=>console.log('Third'));
 
+    /* removeListener will we emitted when using once() to attach a listener*/
+    myEmitter.on('removeListener',(event, listener)=>console.log(`${event} is removed...`));
 
 /* There is a little difference when using on() and once(), when you want your listener to respond each and 
     everytime your event gets emitted. Then you can use on() but when you want your listener to get invoked
